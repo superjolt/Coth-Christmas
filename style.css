@@ -1,5 +1,167 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: white;
-    font-size: 50px;
+  font-family: "Codystar", sans-serif;
+  color: white;
+  font-size: 50px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.snowfall {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  background: linear-gradient(#1090d0, #2612aa 85%);
+}
+
+.snowflake {
+  --small: 3px;
+  --medium: 7px;
+  --large: 10px;
+  width: var(--small); /* Default size for a snowflake is small */
+  height: var(--small);
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: snow 6s linear infinite, wind 10s ease-in-out infinite;
+  top: -10%;
+  left: 10%;
+}
+
+.snowflake:nth-child(2n + 3) {
+  /* 3, 5, 7, ... */
+  width: var(--medium);
+  height: var(--medium);
+}
+
+.snowflake:nth-child(5n) {
+  /* Multiples of 3 */
+  width: var(--large);
+  height: var(--large);
+}
+
+.snowflake:nth-child(1) {
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-child(2) {
+  left: 85%;
+  animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  animation-delay: 2.5s;
+}
+
+.snowflake:nth-child(5) {
+  left: 10%;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(6) {
+  left: 60%;
+  animation-delay: 3.5s;
+}
+
+.snowflake:nth-child(7) {
+  left: 70%;
+  animation-delay: 4s;
+}
+
+.snowflake:nth-child(8) {
+  left: 15%;
+  animation-delay: 4.5s;
+}
+
+.snowflake:nth-child(9) {
+  left: 50%;
+  animation-delay: 5s;
+}
+
+.snowflake:nth-child(10) {
+  left: 80%;
+  animation-delay: 5.5s;
+}
+
+.snowflake:nth-child(11) {
+  left: 20%;
+  animation-delay: 6s;
+}
+
+.snowflake:nth-child(12) {
+  left: 65%;
+  animation-delay: 6.5s;
+}
+
+.snowflake:nth-child(13) {
+  left: 55%;
+  animation-delay: 7s;
+}
+
+.snowflake:nth-child(14) {
+  left: 35%;
+  animation-delay: 7.5s;
+}
+
+.snowflake:nth-child(15) {
+  left: 45%;
+  animation-delay: 8s;
+}
+
+.snowflake:nth-child(16) {
+  left: 5%;
+  animation-delay: 8.5s;
+}
+
+.snowflake:nth-child(17) {
+  left: 75%;
+  animation-delay: 9s;
+}
+
+.snowflake:nth-child(18) {
+  left: 90%;
+  animation-delay: 9.5s;
+}
+
+.snowflake:nth-child(19) {
+  left: 60%;
+  animation-delay: 10s;
+}
+
+.snowflake:nth-child(20) {
+  left: 25%;
+  animation-delay: 10.5s;
+}
+
+@keyframes snow {
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes wind {
+  50% {
+    transform: translateX(120px);
+  }
 }
