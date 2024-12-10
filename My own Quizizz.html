@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Quizizz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Snowflakes Animation */
+        .snowflakes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 1em;
+            animation: snow 10s linear infinite;
+        }
+
+        @keyframes snow {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes drift {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        .snowflake:nth-child(odd) {
+            animation: snow 12s linear infinite, drift 6s ease-in-out infinite;
+        }
+
+        /* Header Styles */
+        header {
+            margin-top: 20px;
+        }
+
+        header h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 60px;
+            margin: 0;
+            text-shadow: 3px 3px 5px #000;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 1;
+            padding-top: 50px;
+        }
+
+        input[type="text"] {
+            width: 60%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            background-color: #fff;
+            font-family: 'Fredoka One', cursive;
+            color: #333;
+        }
+
+        input[type="text"]:focus {
+            border-color: #1e90ff;
+            box-shadow: 0 0 10px #1e90ff;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-family: 'Fredoka One', cursive;
+            background: #ff4500;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e63900;
+        }
+    </style>
+</head>
+<body>
+    <!-- Snowflake Effect -->
+    <div class="snowflakes">
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❄</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Quizizz</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <p style="font-size: 20px; margin-bottom: 20px;">Enter the quiz code below:</p>
+        <form onsubmit="redirectToQuiz(event)">
+            <input type="text" id="quizCode" placeholder="Enter quiz code" required />
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <script>
+        function redirectToQuiz(event) {
+            event.preventDefault();
+            const code = document.getElementById('quizCode').value;
+            if (code) {
+                window.location.href = `https://quizizz.com/join?gc=${code}`;
+            } else {
+                alert("Please enter a valid code!");
+            }
+        }
+        
+        const snowflakes = document.querySelector('.snowflakes');
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflakes.appendChild(snowflake);
+        }
+    </script>
+</body>
+</html>
