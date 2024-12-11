@@ -1,9 +1,12 @@
 .snowfall {
-  position: absolute;
+  position: fixed;
   z-index: -1;
   inset: 0;
   overflow: hidden;
   background: linear-gradient(#1090d0, #2612aa 85%);
+
+  height: 100vh;
+  width: 100vw;
 }
 
 .snowflake {
