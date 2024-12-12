@@ -10,12 +10,17 @@
     text-align: center;
 }
 
-h1 {
+body {
     color: white;
     font-family: 'Poppins', sans-serif;
 }
 
-p {
+nav a {
     color: white;
-    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
 }
+
+nav a:hover {
+    color: red;
+}
+  
