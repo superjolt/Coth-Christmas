@@ -18,7 +18,9 @@ body {
 nav a {
     color: white;
     text-decoration: none;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
     justify-content: center;
 }
 
