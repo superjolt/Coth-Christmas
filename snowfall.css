@@ -13,7 +13,8 @@
   --small: 3px;
   --medium: 7px;
   --large: 10px;
-  width: var(--small); /* Default size for a snowflake is small */
+  width: var(--small);
+  /* Default size for a snowflake is small */
   height: var(--small);
   position: absolute;
   background-color: #fff;
